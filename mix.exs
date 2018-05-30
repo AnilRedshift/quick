@@ -4,7 +4,7 @@ defmodule Modglobal.MixProject do
   @version "0.0.1"
   def project do
     [
-      app: :modglobal,
+      app: :quick,
       version: @version,
       elixir: "~> 1.6",
       start_permanent: Mix.env() == :prod,
