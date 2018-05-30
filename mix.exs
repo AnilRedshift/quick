@@ -18,12 +18,17 @@ defmodule Modglobal.MixProject do
 
   def application do
     [
+      mod: {Quick, []}
     ]
   end
 
   defp deps do
     [
       {:ex_doc, "~> 0.18.3", only: :dev},
+      {:confex, "~> 3.3"},
+      {:cowboy, "~> 2.4"},
+      {:jason, "~> 1.0"},
+      {:plug, "~> 1.5"}
     ]
   end
 
