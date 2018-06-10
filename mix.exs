@@ -18,7 +18,6 @@ defmodule Modglobal.MixProject do
 
   def application do
     [
-      mod: {Quick, []}
     ]
   end
 
