@@ -33,14 +33,13 @@ defmodule Quick.Router do
     end
   end
 
-  defmacro route(pattern, options \\ [], block) do
+  defmacro route(pattern, options \\ [], do: block) do
     name = Keyword.get_lazy(options, :name, fn -> create_name(pattern, options) end)
     route = {pattern, name}
     quote do
       @routes [unquote(route) | @routes]
       def unquote(name)(var!(conn)) do
-        [do: resp] = unquote(block) # Unknown right now why this is wrapped in a do:
-        resp
+        unquote(block)
       end
     end
   end
